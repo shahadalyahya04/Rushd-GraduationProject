@@ -2,6 +2,7 @@ FROM ubuntu:22.04 AS build
 
 ARG FLUTTER_VERSION=3.41.0
 ENV DEBIAN_FRONTEND=noninteractive
+ENV TAR_OPTIONS="--no-same-owner"
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates curl git unzip xz-utils libglu1-mesa \
     && rm -rf /var/lib/apt/lists/*
